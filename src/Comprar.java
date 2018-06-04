@@ -1,14 +1,33 @@
+import java.util.Random;
 
 public class Comprar {
-	private int codigo,codigoproducto,codigousuario,unidades;
+	private int codigo,codigoproducto,unidades;
+	private String codigousuario;
+	private static Random r = new Random();
 	
-	public Comprar(int codigo,int codigoproducto,int codigousuario,int unidades){
+	public Comprar(int codigo,int codigoproducto,String codigousuario,int unidades){
 		this.codigo=codigo;
 		this.codigoproducto=codigoproducto;
 		this.codigousuario=codigousuario;
 		this.unidades=unidades;
 	}
+	public int realizarPago(ProductoServicio objeto,Comprar compra){
+		int precioCompra=0;
+		if(objeto.getCodigoproducto()==compra.codigoproducto){
+			precioCompra=compra.unidades*objeto.getPrecio();
+		}
+		System.out.println("El pago va a ser realizado con el metodo de pago: "+objeto.getMetodopago()+" con un coste de: "+precioCompra+"€");
+		return precioCompra;
+	}
 	
+	public Comprar anadirProducto(ProductoServicio objeto,int cantidad){
+		Comprar nuevaCompra=new Comprar(r.nextInt(1000),objeto.getCodigoproducto(),objeto.getVendedor(),cantidad);
+		System.out.println("El producto "+nuevaCompra+" ha sido añadido, proceda a realizar el pago.");
+		return nuevaCompra;
+	}
+	public void quitarProducto(Comprar objeto){
+		objeto=null;
+	}
 	public int getCodigo() {
 		return codigo;
 	}
@@ -25,11 +44,11 @@ public class Comprar {
 		this.codigoproducto = codigoproducto;
 	}
 
-	public int getCodigousuario() {
+	public String getCodigousuario() {
 		return codigousuario;
 	}
 
-	public void setCodigousuario(int codigousuario) {
+	public void setCodigousuario(String codigousuario) {
 		this.codigousuario = codigousuario;
 	}
 

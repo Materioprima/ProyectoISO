@@ -3,7 +3,7 @@ import java.util.Random;
 public class Pedidos {
 	private String codigoUsuario,seguimiento,fechaCompra,correoVendedor;
 	private int numCompra,tlfVendedor;
-	
+	private static Random r = new Random();
 	
 	public Pedidos(String codigoUsuario, String seguimiento, String fechaCompra, String correoVendedor, int numCompra,
 			int tlfVendedor) {
@@ -16,7 +16,7 @@ public class Pedidos {
 		this.tlfVendedor = tlfVendedor;
 	}
 	public void volverAPedir(Comprar clon){
-		Comprar nuevaOrden=new Comprar((clon.getCodigo()+1),clon.getCodigoproducto(),clon.getCodigousuario(),clon.getUnidades());
+		Comprar nuevaOrden=new Comprar((clon.getCodigo()+r.nextInt(1000)),clon.getCodigoproducto(),clon.getCodigousuario(),clon.getUnidades());
 		System.out.println("Se ha creado el pedido satisfactoriamente.");
 		nuevaOrden.toString();
 	}
