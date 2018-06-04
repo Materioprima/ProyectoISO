@@ -1,7 +1,7 @@
 
 public class Usuario {
 	private String CIF,correo,nombre,compania,direccion,apellidos,contrasena;
-	private int telefono,idioma=0; //0 es español, definido por defecto
+	private int telefono,idioma=0; //0 es espaÃ±ol, definido por defecto
 	
 	public Usuario(String CIF,String correo, String contrasena ){
 		this.CIF=CIF;
@@ -12,7 +12,7 @@ public class Usuario {
 	public String getContrasena() {
 		return contrasena;
 	}
-	public void setContraseña(String contrasena) {
+	public void setContraseÃ±a(String contrasena) {
 		this.contrasena = contrasena;
 	}
 	public String getCIF() {
