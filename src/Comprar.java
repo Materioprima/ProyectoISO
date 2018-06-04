@@ -13,10 +13,13 @@ public class Comprar {
 	}
 	public int realizarPago(ProductoServicio objeto,Comprar compra){
 		int precioCompra=0;
-		if(objeto.getCodigoproducto()==compra.codigoproducto){
+		if((objeto.getUnidades()>0) && (objeto.getUnidades()-compra.getUnidades())>=0){
 			precioCompra=compra.unidades*objeto.getPrecio();
+			System.out.println("El pago va a ser realizado con el metodo de pago: "+objeto.getMetodopago()+" con un coste de: "+precioCompra+"€");
+			objeto.setUnidades(objeto.getUnidades()-compra.getUnidades());
+		}else{
+			System.out.println("No hay suficientes unidades");
 		}
-		System.out.println("El pago va a ser realizado con el metodo de pago: "+objeto.getMetodopago()+" con un coste de: "+precioCompra+"€");
 		return precioCompra;
 	}
 	

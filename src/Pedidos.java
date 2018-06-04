@@ -15,10 +15,14 @@ public class Pedidos {
 		this.numCompra = numCompra;
 		this.tlfVendedor = tlfVendedor;
 	}
-	public void volverAPedir(Comprar clon){
-		Comprar nuevaOrden=new Comprar((clon.getCodigo()+r.nextInt(1000)),clon.getCodigoproducto(),clon.getCodigousuario(),clon.getUnidades());
-		System.out.println("Se ha creado el pedido satisfactoriamente.");
-		nuevaOrden.toString();
+	public void volverAPedir(Comprar compra,ProductoServicio objeto){
+		if((objeto.getUnidades()>0) && (objeto.getUnidades()-compra.getUnidades())>=0){
+			Comprar nuevaOrden=new Comprar((compra.getCodigo()+r.nextInt(1000)),compra.getCodigoproducto(),compra.getCodigousuario(),compra.getUnidades());
+			System.out.println("Se ha creado el pedido satisfactoriamente.");
+			nuevaOrden.toString();
+		}else{
+			System.out.println("No hay suficientes unidades");
+		}
 	}
 	public void localizarPedido(String seguimiento){
 		System.out.println("Su pedido con nº de seguimiento "+seguimiento+" se encuentra en china.");
