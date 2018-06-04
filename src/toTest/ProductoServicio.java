@@ -99,9 +99,9 @@ public class ProductoServicio {
 
 	@Override
 	public String toString() {
-		return "Producto/Servicio [Código del producto=" + codigoproducto + ", precio=" + precio + "€, unidades=" + unidades
-				+ ", valoracion=" + valoracion + ", vendedor=" + vendedor + ", nombre=" + nombre + ", descripción del producto="
-				+ descripcion + ", categoria=" + categoria + ", ubicación=" + ubicacion + ", método de pago=" + metodopago
-				+ ", promoción=" + promo + "]";
+		return "Producto/Servicio [CÃ³digo del producto=" + codigoproducto + ", precio=" + precio + "â‚¬, unidades=" + unidades
+				+ ", valoracion=" + valoracion + ", vendedor=" + vendedor + ", nombre=" + nombre + ", descripciÃ³n del producto="
+				+ descripcion + ", categoria=" + categoria + ", ubicaciÃ³n=" + ubicacion + ", mÃ©todo de pago=" + metodopago
+				+ ", promociÃ³n=" + promo + "]";
 	}
 }
