@@ -25,12 +25,12 @@ public class Pedidos {
 		}
 	}
 	public void localizarPedido(String seguimiento){
-		System.out.println("Su pedido con nº de seguimiento "+seguimiento+" se encuentra en china.");
+		System.out.println("Su pedido con nÂº de seguimiento "+seguimiento+" se encuentra en china.");
 	}
 	public void contactarVendedor(int numCompra){
 		if(this.numCompra==numCompra){
 			System.out.println("El correo del vendedor es: "+this.getCorreoVendedor());
-			System.out.println("El teléfono del vendedor es: "+this.getTlfVendedor());
+			System.out.println("El telÃ©fono del vendedor es: "+this.getTlfVendedor());
 		}
 	}
 	public String getCodigoUsuario() {
@@ -71,8 +71,8 @@ public class Pedidos {
 	}
 	@Override
 	public String toString() {
-		return "Pedidos [CIF=" + codigoUsuario + ", nº de seguimiento=" + seguimiento + ", fecha de compra="
-				+ fechaCompra + ", correo del vendedor=" + correoVendedor + ", nº de compra=" + numCompra + ", teléfono del vendedor="
+		return "Pedidos [CIF=" + codigoUsuario + ", nÂº de seguimiento=" + seguimiento + ", fecha de compra="
+				+ fechaCompra + ", correo del vendedor=" + correoVendedor + ", nÂº de compra=" + numCompra + ", telÃ©fono del vendedor="
 				+ tlfVendedor + "]";
 	}
 	
