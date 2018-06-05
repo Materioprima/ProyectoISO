@@ -1,4 +1,4 @@
-
+package toTest;
 public class ProductoServicio {
 	private int codigoproducto,precio,unidades,valoracion;
 	private String vendedor,nombre,descripcion,categoria,ubicacion,metodopago;
