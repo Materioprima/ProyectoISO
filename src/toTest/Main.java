@@ -10,7 +10,11 @@ public class Main {
 		String correo="ejemplo@correo.com";
 		String contrasena="clavesupersecreta";
 		Usuario user1= new Usuario(CIF,correo,contrasena);
+		Usuario admin= new Usuario("admin","admin@admin","admin");
 		System.out.println(user1);
+		System.out.println(admin);
+		admin.gestionarUsuarios(user1);
+		user1.gestionarUsuarios(admin);
 		
 		int codigoproducto=r.nextInt(100);
 		int precio=50;
@@ -27,6 +31,7 @@ public class Main {
 		
 		ProductoServicio productoejemplo= new ProductoServicio(codigoproducto,precio,unidades,valoracion,vendedor,nombre,descripcion,categoria,ubicacion,metodopago,promo,foto);
 		System.out.println(productoejemplo);
+		admin.gestionarProductos(productoejemplo);
 		
 		int codigoCompra=r.nextInt(1000);
 		int unidadescompra=50;
