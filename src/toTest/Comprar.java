@@ -16,7 +16,7 @@ public class Comprar {
 		int precioCompra=0;
 		if((objeto.getUnidades()>0) && (objeto.getUnidades()-compra.getUnidades())>=0){
 			precioCompra=compra.unidades*objeto.getPrecio();
-			System.out.println("El pago va a ser realizado con el metodo de pago: "+objeto.getMetodopago()+" con un coste de: "+precioCompra+"â‚¬");
+			System.out.println("El pago va a ser realizado con el metodo de pago: "+objeto.getMetodopago()+" con un coste de: "+precioCompra+"€");
 			objeto.setUnidades(objeto.getUnidades()-compra.getUnidades());
 		}else{
 			System.out.println("No hay suficientes unidades");
@@ -26,7 +26,7 @@ public class Comprar {
 	
 	public static Comprar anadirProducto(ProductoServicio objeto,int cantidad){
 		Comprar nuevaCompra=new Comprar(r.nextInt(1000),objeto.getCodigoproducto(),objeto.getVendedor(),cantidad);
-		System.out.println("El producto "+nuevaCompra+" ha sido aÃ±adido, proceda a realizar el pago.");
+		System.out.println("El producto "+nuevaCompra+" ha sido añadido, proceda a realizar el pago.");
 		return nuevaCompra;
 	}
 	public void quitarProducto(Comprar objeto){
@@ -65,7 +65,7 @@ public class Comprar {
 	}
 	@Override
 	public String toString() {
-		return "Compra [CÃ³digo de la compra=" + codigo + ", CÃ³digo del producto=" + codigoproducto + ", CIF del usuario=" + codigousuario
+		return "Compra [Código de la compra=" + codigo + ", Código del producto=" + codigoproducto + ", CIF del usuario=" + codigousuario
 				+ ", unidades=x" + unidades + "]";
 	}
 	
