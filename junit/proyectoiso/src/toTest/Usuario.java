@@ -2,13 +2,45 @@ package toTest;
 public class Usuario {
 	private String CIF,correo,nombre,compania,direccion,apellidos,contrasena;
 	private int telefono,idioma=0; //0 es español, definido por defecto
+	private boolean admin;
 	
 	public Usuario(String CIF,String correo, String contrasena ){
 		this.CIF=CIF;
 		this.correo=correo;
 		this.contrasena=contrasena;
+		if(CIF=="admin"){
+			admin=true;
+		}else {
+			admin=false;
+		}
+	}
+	public void gestionarUsuarios(Usuario user) {
+		if(isAdmin()) {
+			System.out.println("El admin ha cambiado al usuario "+user);
+			Usuario user1= new Usuario("RandomCIF","Cambiadopor@admin","**********");
+			user=user1;
+			System.out.println("Resultado "+user);
+		}else {
+			System.out.println("No reune los requisitos para esa funcion");
+		}
 	}
 	
+	public void gestionarProductos(ProductoServicio objeto) {
+		if(isAdmin()) {
+			objeto.setUnidades(objeto.getUnidades()+10);
+			System.out.println("El administrador ha modificado las unidades del producto, de "+(objeto.getUnidades()-10)+ " a "+objeto.getUnidades()+" unidades");
+		}else {
+			System.out.println("No reune los requisitos para esa funcion");
+		}
+	}
+	public boolean isAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
+	}
+
 	public String getContrasena() {
 		return contrasena;
 	}
@@ -74,6 +106,6 @@ public class Usuario {
 	public String toString() {
 		return "Usuario [CIF=" + CIF + ", correo=" + correo + ", nombre=" + nombre + ", compania=" + compania
 				+ ", direccion=" + direccion + ", apellidos=" + apellidos + ", contrasena=" + contrasena + ", telefono="
-				+ telefono + ", idioma=" + idioma + "]";
+				+ telefono + ", idioma=" + idioma + ", admin= "+admin+"]";
 	}
 }
