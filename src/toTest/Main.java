@@ -1,3 +1,4 @@
+package toTest;
 import java.util.Random;
 
 public class Main {
@@ -31,9 +32,9 @@ public class Main {
 		int unidadescompra=50;
 		Comprar nuevaCompra=new Comprar(codigoCompra,productoejemplo.getCodigoproducto(),user1.getCIF(),unidadescompra);
 		System.out.println(nuevaCompra);
-		nuevaCompra.realizarPago(productoejemplo,nuevaCompra);
-		nuevaCompra.realizarPago(productoejemplo,nuevaCompra);
-		nuevaCompra.realizarPago(productoejemplo,nuevaCompra);
+		Comprar.realizarPago(productoejemplo,nuevaCompra);
+		Comprar.realizarPago(productoejemplo,nuevaCompra);
+		Comprar.realizarPago(productoejemplo,nuevaCompra);
 		System.out.println(productoejemplo);
 		
 		String fechaCompra="04/06/18";
