@@ -1,4 +1,4 @@
-
+package toTest;
 public class Usuario {
 	private String CIF,correo,nombre,compania,direccion,apellidos,contrasena;
 	private int telefono,idioma=0; //0 es español, definido por defecto
