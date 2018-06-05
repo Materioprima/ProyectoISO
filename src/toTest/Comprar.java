@@ -1,3 +1,4 @@
+package toTest;
 import java.util.Random;
 
 public class Comprar {
