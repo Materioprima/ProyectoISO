@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Usuario {
 	private String CIF,correo,nombre,compania,direccion,apellidos,contrasena;
-	private int telefono,idioma=0; //0 es espaÃ±ol, definido por defecto
+	private int telefono,idioma=0; //0 es español, definido por defecto
 	private boolean admin;
 	private ArrayList<ProductoServicio> objetos = new ArrayList<ProductoServicio>();
 	
@@ -57,14 +57,19 @@ public class Usuario {
 			objeto.setUnidades(objeto.getUnidades()+10);
 			System.out.println("El administrador ha modificado las unidades del producto, de "+(objeto.getUnidades()-10)+ " a "+objeto.getUnidades()+" unidades");
 		}else {
-			System.out.println("No reune los requisitos para esa funcion");
+			if(objetos.contains(objeto)) {
+				objetos.get(objetos.indexOf(objeto)).setUnidades(objetos.get(objetos.indexOf(objeto)).getUnidades()+10);
+				System.out.println("El usuario ha modificado las unidades del producto, de "+(objeto.getUnidades()-10)+ " a "+objeto.getUnidades()+" unidades");
+			}else {
+				System.out.println("No reune los requisitos para esa funcion");
+			}
 		}
 	}
 	
 	public void anadirProducto(ProductoServicio objeto){
 		objetos.add(objeto);
 		System.out.println("Se ha añadido el producto/servicio "+objeto);
-		System.out.println("La lista del usuario se compone de: "+this.getObjetos().toArray().toString());
+		System.out.println("La lista del usuario se compone de: "+this.getObjetos().toString());
 	}
 	
 	public void eliminarProducto(ProductoServicio objeto){

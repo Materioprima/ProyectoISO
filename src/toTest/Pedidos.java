@@ -26,7 +26,7 @@ public class Pedidos {
 		}
 	}
 	public void localizarPedido(String seguimiento){
-		System.out.println("Su pedido con nÂº de seguimiento "+seguimiento+" se encuentra en china.");
+		System.out.println("Su pedido con nº de seguimiento "+seguimiento+" se encuentra en china.");
 	}
 	public void contactarVendedor(int numCompra){
 		if(this.numCompra==numCompra){

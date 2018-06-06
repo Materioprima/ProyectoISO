@@ -13,8 +13,11 @@ public class Main {
 		Usuario admin= new Usuario("admin","admin@admin","admin");
 		System.out.println(user1);
 		System.out.println(admin);
+		System.out.println();
+		
 		admin.gestionarUsuarios(user1);
 		user1.gestionarUsuarios(admin);
+		System.out.println();
 		
 		int codigoproducto=r.nextInt(100);
 		int precio=50;
@@ -32,6 +35,13 @@ public class Main {
 		ProductoServicio productoejemplo= new ProductoServicio(codigoproducto,precio,unidades,valoracion,vendedor,nombre,descripcion,categoria,ubicacion,metodopago,promo,foto);
 		System.out.println(productoejemplo);
 		admin.gestionarProducto(productoejemplo);
+		System.out.println();
+		
+		user1.anadirProducto(productoejemplo);
+		System.out.println();
+		System.out.println(productoejemplo);
+		user1.gestionarProducto(productoejemplo);
+		System.out.println();
 		
 		int codigoCompra=r.nextInt(1000);
 		int unidadescompra=50;
