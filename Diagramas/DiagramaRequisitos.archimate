@@ -62,7 +62,7 @@
     <element xsi:type="archimate:RealizationRelationship" id="9e43003b-a23a-4204-b750-e38993875ae9" source="29539300-0fca-4402-b87b-0358800baa6e" target="44e9f103-0a70-47dd-b93e-a0f066dfdf6d"/>
   </folder>
   <folder name="Views" id="5fdbf075-2557-402f-a7be-2c614f0fb049" type="diagrams">
-    <element xsi:type="archimate:ArchimateDiagramModel" name="Default View" id="a7c314fd-76c0-452b-8c16-aabd2b7b907a">
+    <element xsi:type="archimate:ArchimateDiagramModel" name="Diagrama de requisitos" id="a7c314fd-76c0-452b-8c16-aabd2b7b907a">
       <child xsi:type="archimate:DiagramObject" id="de076312-04e1-4702-b7d5-61d186d8aaa2" targetConnections="fc4eb277-03a3-481f-824d-b2b2e77f80c9 6f633f1f-5b17-453b-951b-c0c975249876 386ae12e-30dd-4f9f-ba3b-75f52de0e948 46916abf-2094-4bcf-b574-38dbea359f0a 53a68783-d971-4e52-946f-a01cb62a490b 9166c8ab-4788-43fd-a418-3423cf821e32" textPosition="1" archimateElement="44e9f103-0a70-47dd-b93e-a0f066dfdf6d">
         <bounds x="468" y="273" width="193" height="133"/>
       </child>
