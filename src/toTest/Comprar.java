@@ -15,7 +15,7 @@ public class Comprar {
 	public int realizarPago(){
 		int precioCompra=0;
 		for(int i=0;i<cesta.size();i++) {
-			precioCompra+=(cesta.get(i).getUnidades())*(cesta.get(i).getPrecio());
+			precioCompra+=(unidades[i])*(cesta.get(i).getPrecio());
 		}
 		return precioCompra;
 	}

@@ -46,7 +46,7 @@ public class Main {
 		int codigoCompra=r.nextInt(1000);
 		Comprar nuevaCompra=new Comprar(codigoCompra,user1.getCIF());
 		System.out.println(nuevaCompra);
-		nuevaCompra.anadirProducto(productoejemplo, 50);
+		nuevaCompra.anadirProducto(productoejemplo, 45);
 		System.out.println(nuevaCompra+" el costo es de: "+nuevaCompra.realizarPago()+"€");
 		System.out.println(productoejemplo);
 		System.out.println();

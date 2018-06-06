@@ -151,6 +151,11 @@ public class Usuario {
 	public void CambiarIdioma(int index){
 		this.idioma=index;
 	}
+	
+	public boolean login(Usuario user) {
+		boolean login=false;
+		return login;
+	}
 	@Override
 	public String toString() {
 		return "Usuario [CIF=" + CIF + ", correo=" + correo + ", nombre=" + nombre + ", compania=" + compania

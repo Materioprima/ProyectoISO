@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Random;
-import org.junit.*;
 
 import toTest.Comprar;
 import toTest.ProductoServicio;
