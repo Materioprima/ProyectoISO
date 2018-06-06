@@ -76,7 +76,7 @@ public class Usuario {
 		if(objetos.contains(objeto)){
 			objetos.remove(objeto);
 			System.out.println("Se ha eliminado el producto/servicio "+objeto);
-			System.out.println("La lista del usuario se compone de: "+this.getObjetos().toArray().toString());
+			System.out.println("La lista del usuario se compone de: "+this.getObjetos().toString());
 		}else{
 			System.out.println("No se ha encontrado el producto/servicio.");
 		}
@@ -150,6 +150,11 @@ public class Usuario {
 	}
 	public void CambiarIdioma(int index){
 		this.idioma=index;
+	}
+	
+	public boolean login(Usuario user) {
+		boolean login=false;
+		return login;
 	}
 	@Override
 	public String toString() {
