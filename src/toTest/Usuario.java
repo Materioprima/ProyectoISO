@@ -1,9 +1,19 @@
 package toTest;
+
+import java.util.ArrayList;
+
 public class Usuario {
 	private String CIF,correo,nombre,compania,direccion,apellidos,contrasena;
 	private int telefono,idioma=0; //0 es espaÃ±ol, definido por defecto
 	private boolean admin;
+	private ArrayList<ProductoServicio> objetos = new ArrayList<ProductoServicio>();
 	
+	public ArrayList<ProductoServicio> getObjetos() {
+		return objetos;
+	}
+	public void setObjetos(ArrayList<ProductoServicio> objetos) {
+		this.objetos = objetos;
+	}
 	public Usuario(String CIF,String correo, String contrasena ){
 		this.CIF=CIF;
 		this.correo=correo;
@@ -24,8 +34,25 @@ public class Usuario {
 			System.out.println("No reune los requisitos para esa funcion");
 		}
 	}
+	public void darAltaUsuario(Usuario user){
+		if(isAdmin()){
+			user.CambiarPerfil(user);
+			System.out.println("Se ha dado de alta al usuario "+user);
+		}else {
+			System.out.println("No reune los requisitos para esa funcion");
+		}
+	}
 	
-	public void gestionarProductos(ProductoServicio objeto) {
+	public void darBajaUsuario(Usuario user){
+		if(isAdmin()){
+			String name=user.getCIF();
+			user=null;
+			System.out.println("Se ha dado de baja al usuario "+name);
+		}else {
+			System.out.println("No reune los requisitos para esa funcion");
+		}
+	}
+	public void gestionarProducto(ProductoServicio objeto) {
 		if(isAdmin()) {
 			objeto.setUnidades(objeto.getUnidades()+10);
 			System.out.println("El administrador ha modificado las unidades del producto, de "+(objeto.getUnidades()-10)+ " a "+objeto.getUnidades()+" unidades");
@@ -33,6 +60,23 @@ public class Usuario {
 			System.out.println("No reune los requisitos para esa funcion");
 		}
 	}
+	
+	public void anadirProducto(ProductoServicio objeto){
+		objetos.add(objeto);
+		System.out.println("Se ha añadido el producto/servicio "+objeto);
+		System.out.println("La lista del usuario se compone de: "+this.getObjetos().toArray().toString());
+	}
+	
+	public void eliminarProducto(ProductoServicio objeto){
+		if(objetos.contains(objeto)){
+			objetos.remove(objeto);
+			System.out.println("Se ha eliminado el producto/servicio "+objeto);
+			System.out.println("La lista del usuario se compone de: "+this.getObjetos().toArray().toString());
+		}else{
+			System.out.println("No se ha encontrado el producto/servicio.");
+		}
+	}
+	
 	public boolean isAdmin() {
 		return admin;
 	}

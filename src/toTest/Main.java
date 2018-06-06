@@ -31,7 +31,7 @@ public class Main {
 		
 		ProductoServicio productoejemplo= new ProductoServicio(codigoproducto,precio,unidades,valoracion,vendedor,nombre,descripcion,categoria,ubicacion,metodopago,promo,foto);
 		System.out.println(productoejemplo);
-		admin.gestionarProductos(productoejemplo);
+		admin.gestionarProducto(productoejemplo);
 		
 		int codigoCompra=r.nextInt(1000);
 		int unidadescompra=50;
