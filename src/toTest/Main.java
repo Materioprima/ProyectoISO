@@ -44,18 +44,23 @@ public class Main {
 		System.out.println();
 		
 		int codigoCompra=r.nextInt(1000);
-		int unidadescompra=50;
-		Comprar nuevaCompra=new Comprar(codigoCompra,productoejemplo.getCodigoproducto(),user1.getCIF(),unidadescompra);
+		Comprar nuevaCompra=new Comprar(codigoCompra,user1.getCIF());
 		System.out.println(nuevaCompra);
-		Comprar.realizarPago(productoejemplo,nuevaCompra);
-		Comprar.realizarPago(productoejemplo,nuevaCompra);
-		Comprar.realizarPago(productoejemplo,nuevaCompra);
+		nuevaCompra.anadirProducto(productoejemplo, 50);
+		System.out.println(nuevaCompra+" el costo es de: "+nuevaCompra.realizarPago()+"€");
 		System.out.println(productoejemplo);
+		System.out.println();
 		
 		String fechaCompra="04/06/18";
 		String seguimiento="ES"+r.nextInt(300);
 		Pedidos pedidoejemplo=new Pedidos(user1.getCIF(),seguimiento,fechaCompra,user1.getCorreo(),nuevaCompra.getCodigo(),user1.getTelefono());
 		System.out.println(pedidoejemplo);
+		
+		pedidoejemplo.volverAPedir(nuevaCompra);
+		System.out.println(productoejemplo);
+		System.out.println();
+		
+		pedidoejemplo.volverAPedir(nuevaCompra);
 	}
 
 }

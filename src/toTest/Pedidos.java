@@ -1,4 +1,5 @@
 package toTest;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Pedidos {
@@ -16,17 +17,31 @@ public class Pedidos {
 		this.numCompra = numCompra;
 		this.tlfVendedor = tlfVendedor;
 	}
-	public void volverAPedir(Comprar compra,ProductoServicio objeto){
-		if((objeto.getUnidades()>0) && (objeto.getUnidades()-compra.getUnidades())>=0){
-			Comprar nuevaOrden=new Comprar((compra.getCodigo()+r.nextInt(1000)),compra.getCodigoproducto(),compra.getCodigousuario(),compra.getUnidades());
-			System.out.println("Se ha creado el pedido satisfactoriamente.");
-			nuevaOrden.toString();
-		}else{
-			System.out.println("No hay suficientes unidades");
+	public Comprar volverAPedir(Comprar compra){
+		Comprar nuevaCompra=null;
+		boolean viabilidad=true;
+		ArrayList<ProductoServicio> aux=compra.getCesta();
+		for(int i=0;i<aux.size();i++) {
+			ProductoServicio objetoaux=aux.get(i);
+			if(objetoaux.getUnidades()<compra.getUnidades()[i]) {
+				viabilidad=false;
+			}
 		}
+		if(viabilidad) {
+			nuevaCompra=compra;
+			nuevaCompra.setCodigo(r.nextInt(1000));
+			for(int i=0;i<aux.size();i++) {
+				ProductoServicio objetoaux=aux.get(i);
+				objetoaux.setUnidades(objetoaux.getUnidades()-compra.getUnidades()[i]);
+			}
+			System.out.println("Proceda a pagar la nueva orden: "+nuevaCompra);
+		}else {
+			System.out.println("No se puede realizar el pedido de nuevo por falta de existencias.");
+		}
+		return nuevaCompra;
 	}
 	public void localizarPedido(String seguimiento){
-		System.out.println("Su pedido con nº de seguimiento "+seguimiento+" se encuentra en china.");
+		System.out.println("Su pedido con nº de seguimiento "+seguimiento+" se encuentra en las coordenadas. ES"+r.nextInt(1000));
 	}
 	public void contactarVendedor(int numCompra){
 		if(this.numCompra==numCompra){
