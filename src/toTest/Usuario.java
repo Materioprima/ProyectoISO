@@ -156,6 +156,7 @@ public class Usuario {
 		boolean login=false;
 		return login;
 	}
+	
 	@Override
 	public String toString() {
 		return "Usuario [CIF=" + CIF + ", correo=" + correo + ", nombre=" + nombre + ", compania=" + compania
